@@ -27,6 +27,7 @@ import jwt_decode from 'jwt-decode';
 import EndPlate from './components/shearConnection/EndPlate';
 import CleatAngle from './components/shearConnection/CleatAngle';
 import SeatedAngle from './components/shearConnection/SeatedAngle';
+import GroupDesign from './components/bridge/GroupDesign';
 
 let renderedOnce = false
 
@@ -77,6 +78,7 @@ function App() {
           }
         />
       <Route path='/user' element={<UserAccount />} />
+      <Route path='/group-design' element={<GroupDesign />} />
       </Route>
       
     )

@@ -38,7 +38,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 CORS_ALLOWED_ORIGINS = ['http://127.0.0.1:5173',
-                        'http://localhost:5173']  # 5173 -> port for Vite App
+                        'http://localhost:5173',
+                        'http://localhost:3000',
+                        'http://127.0.0.1:3000']  # 5173 -> port for Vite App
 
 CORS_ALLOW_METHODS = ['POST', 'GET', 'OPTIONS']
 
@@ -55,7 +57,7 @@ CORS_ALLOW_HEADERS = ["accept",
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:5173', 'http://localhost:5173']
+CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:5173', 'http://localhost:5173', 'http://localhost:3000', 'http://127.0.0.1:3000']
 
 
 # Application definition
@@ -68,6 +70,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'osdag',
+    'bridge_module',
     # cors headers 
     'corsheaders',
 
@@ -162,10 +165,10 @@ WSGI_APPLICATION = 'osdag_web.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb',
-        'USER': 'myuser',
-        'PASSWORD': 'mypassword',
-        'HOST': 'db',  # This should be the name of the service
+        'NAME': 'postgres_Intg_osdag',
+        'USER': 'osdagdeveloper',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',  # This should be the name of the service
         'PORT': '5432',
     }
 }
